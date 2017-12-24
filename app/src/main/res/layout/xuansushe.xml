@@ -8,17 +8,18 @@
         android:id="@+id/logo"
         android:layout_width="168dp"
         android:layout_height="152dp"
-        android:gravity="center"
+
         android:src="@drawable/schoollogo"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="370dp" />
+        android:layout_marginBottom="450dp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="请输入密码"
         android:inputType="textPassword"
         android:layout_below="@+id/editText3"
         android:layout_alignLeft="@+id/editText3"
@@ -29,7 +30,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="登录"
         android:layout_marginLeft="48dp"
         android:layout_marginStart="48dp"
         android:layout_below="@+id/editText"
@@ -41,7 +42,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="取消"
         android:layout_marginRight="57dp"
         android:layout_marginEnd="57dp"
         android:layout_alignBaseline="@+id/button"
@@ -55,7 +56,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="请输入学号"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 

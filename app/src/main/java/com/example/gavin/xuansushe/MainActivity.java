@@ -20,6 +20,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import cn.edu.pku.gavin.util.NetUtil;
 
@@ -28,7 +37,6 @@ import cn.edu.pku.gavin.util.NetUtil;
  */
 
 public class MainActivity extends Activity implements View.OnClickListener{
-
 
 
         private EditText mAccount, mPassword;
@@ -42,8 +50,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         }
 
         void initView() {
-            mAccount = (EditText) findViewById(R.id.editText3);//拿到布局的控件，并强制类型转换
-            mPassword = (EditText) findViewById(R.id.login_edit_pwd);
+            mAccount = (EditText) findViewById(R.id.editText3);
+            mPassword = (EditText) findViewById(R.id.editText);
             mLogin = (Button) findViewById(R.id.button);
             mLogin.setOnClickListener(this);
         }
@@ -51,8 +59,15 @@ public class MainActivity extends Activity implements View.OnClickListener{
         public void onClick(View view) {
             final String studentid = mAccount.getText().toString().trim();
             final String password = mPassword.getText().toString().trim();
-            loginByGet(mAccount.getText().toString(), mPassword.getText().toString());
+            if (TextUtils.isEmpty(studentid.trim()) || TextUtils.isEmpty(password.trim())) {
+                Toast.makeText(MainActivity.this, "请输入账户或密码", Toast.LENGTH_SHORT).show();
+            } else {
+                //调用get请求的方法
+                loginByGet(mAccount.getText().toString(), mPassword.getText().toString());
+
+            }
         }
+
 
         public void loginByGet(String username, String password) {
             String data = "username=" + username + "&password=" + password;
@@ -64,6 +79,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
                     HttpURLConnection con = null;
                     try {
                         URL url = new URL(address);
+                        if ("https".equalsIgnoreCase(url.getProtocol())) {
+                            NetUtil.ignoreSsl();
+                        }
                         con = (HttpURLConnection) url.openConnection();
                         con.setRequestMethod("GET");
                         con.setConnectTimeout(8000);
@@ -91,105 +109,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
             }).start();
 
         }
-        public class User extends Application {
-            private String studentid;
-            private String name;
-            private String gender;
-            private String vcode;
-            private String room;
-            private String building;
-            private String location;
-            private String grade;
-            private String num;
-            private String errcode;
 
-            public String getStudentid() {
-                return studentid;
-            }
-
-            public void setStudentid(String studentid) {
-                this.studentid = studentid;
-            }
-
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
-            public String getGender() {
-                return gender;
-            }
-
-            public void setGender(String gender) {
-                this.gender = gender;
-            }
-
-            public String getVcode() {
-                return vcode;
-            }
-
-            public void setVcode(String vcode) {
-                this.vcode = vcode;
-            }
-
-            public String getRoom() {
-                return room;
-            }
-
-            public void setRoom(String room) {
-                this.room = room;
-            }
-
-            public String getBuilding() {
-                return building;
-            }
-
-            public void setBuilding(String building) {
-                this.building = building;
-            }
-
-            public String getLocation() {
-                return location;
-            }
-
-            public void setLocation(String location) {
-                this.location = location;
-            }
-
-            public String getGrade() {
-                return grade;
-            }
-
-            public void setGrade(String grade) {
-                this.grade = grade;
-            }
-
-            public String getNum() {
-                return num;
-            }
-
-            public void setNum(String num) {
-                this.num = num;
-            }
-
-            public String getErrcode() {
-                return errcode;
-            }
-
-            public void setErrcode(String errcode) {
-                this.errcode = errcode;
-            }
-
-            @Override
-            public String toString() {
-                return "SelectionResult{" +
-                        "errcode='" + errcode + '\'' +
-                        '}';
-            }
-        }
         private void getJSON(String Jsondata) {
             try {
                 JSONObject a = new JSONObject(Jsondata);
@@ -224,5 +144,5 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 e.printStackTrace();
             }
         }
-    }
 
+    }

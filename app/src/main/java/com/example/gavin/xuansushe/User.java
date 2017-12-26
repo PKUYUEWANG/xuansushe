@@ -2,21 +2,21 @@ package com.example.gavin.xuansushe;
 
 import android.app.Application;
 
+import java.io.Serializable;
+
 /**
  * Created by GAVIN on 2017/12/25.
  */
 
-public class User extends Application {
-    private String studentid;
-    private String name;
-    private String gender;
-    private String vcode;
-    private String room;
-    private String building;
-    private String location;
-    private String grade;
-    private String num;
-    private String errcode;
+public class User implements Serializable {
+    String studentid;
+    String name;
+    String gender;
+    String vcode;
+    String room;
+    String building;
+    String location;
+    String grade;
 
     public String getStudentid() {
         return studentid;
@@ -80,28 +80,5 @@ public class User extends Application {
 
     public void setGrade(String grade) {
         this.grade = grade;
-    }
-
-    public String getNum() {
-        return num;
-    }
-
-    public void setNum(String num) {
-        this.num = num;
-    }
-
-    public String getErrcode() {
-        return errcode;
-    }
-
-    public void setErrcode(String errcode) {
-        this.errcode = errcode;
-    }
-
-    @Override
-    public String toString() {
-        return "SelectionResult{" +
-                "errcode='" + errcode + '\'' +
-                '}';
     }
 }

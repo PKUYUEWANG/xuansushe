@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/schoolname"></ImageView>
+
+        <ListView
+            android:id="@+id/mylist"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:divider="#123"
+            android:dividerHeight="1px"></ListView>
+
+        <!--<View-->
+        <!--android:layout_width="522dp"-->
+        <!--android:layout_height="194dp"-->
+        <!--android:background="#123"></View>-->
+        <!--<ImageView-->
+        <!--android:id="@+id/mypic"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@drawable/touxiang"-->
+
+        <!--/>-->
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注意事项"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:textColorHint="#123411"
+            />
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="①请妥善保管好个人信息，请勿将验证码透露他人。
+②女生办理时间：8月25日13:00~15:00。男生办理时间：8月25日15：00~17:00。
+③本系统仅支持大兴校区使用。"
+            android:layout_below="@+id/tv1"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tv3"-->
+            <!--android:text="12:00:00"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_below="@+id/tv2"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/tv4"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="女生：2017-08-30 15:00:00 ~ 2017-09-01"-->
+            <!--android:textSize="18sp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:textColorHint="#123411"-->
+            <!--android:layout_below="@+id/tv3"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/tv5"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="12:00:00"-->
+            <!--android:layout_below="@+id/tv4"-->
+            <!--android:layout_marginLeft="18dp"-->
+            <!--android:textSize="18sp"-->
+            <!--android:layout_centerInParent="true"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tv6"-->
+            <!--android:text="说明："-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_below="@+id/tv5"-->
+            <!--android:textSize="20sp"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tv7"-->
+            <!--android:text="1.办理多人住宿时，需要提供校验码，请勿透露给非同住人"-->
+            <!--android:layout_below="@+id/tv6"-->
+            <!--android:textSize="18sp"-->
+            <!--android:layout_centerInParent="true"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/tv8"-->
+            <!--android:text="2.本系统仅限于大兴校区新生使用！"-->
+            <!--android:layout_below="@+id/tv7"-->
+            <!--android:textSize="18sp"/>-->
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="23sp"
+            android:text="开始办理"
+            android:id="@+id/deal_with_mybus"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_centerInParent="true"
+            android:background="#545bcb" />
+    </RelativeLayout>
+
+</LinearLayout>
+</ScrollView>

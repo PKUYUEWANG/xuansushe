@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private boolean parsestudentid(String stuid) {
+    private boolean parsestudentid(String stuid) {//判断学号是否正确
         if(stuid.length()==10&&stuid.substring(3,5).equals("12")){
             System.out.println("这就对了嘛");
             return true;

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     xmlns:android="http://schemas.android.com/apk/res/android">
+
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -72,9 +74,9 @@
             android:text="①请妥善保管好个人信息，请勿将验证码透露他人。
 ②女生办理时间：8月25日13:00~15:00。男生办理时间：8月25日15：00~17:00。
 ③本系统仅支持大兴校区使用。"
-            android:layout_below="@+id/tv1"
-            android:layout_marginLeft="20dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
         <!--<TextView-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
@@ -136,10 +138,10 @@
             android:textSize="23sp"
             android:text="开始办理"
             android:id="@+id/deal_with_mybus"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:layout_centerInParent="true"
-            android:background="#545bcb" />
+            android:background="#545bcb"
+            android:layout_marginTop="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 </LinearLayout>

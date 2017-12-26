@@ -60,10 +60,10 @@ public class SelectRoom extends AppCompatActivity {
 
     private void initlistview() {//显示用户信息
         List<String> myinfo=new ArrayList<>();
-        myinfo.add("姓名:"+"                                              "+ student.getName());
-        myinfo.add("学号:"+"                                              "+ student.getStudentid());
-        myinfo.add("性别:"+"                                              "+ student.getGender() );
-        myinfo.add("校验码:"+"                                         "+ student.getVcode() );
+        myinfo.add("姓名:"+"                                                        "+ student.getName());
+        myinfo.add("学号:"+"                                                        "+ student.getStudentid());
+        myinfo.add("性别:"+"                                                        "+ student.getGender() );
+        myinfo.add("校验码:"+"                                                   "+ student.getVcode() );
         ArrayAdapter myadapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,myinfo);
         myinfolistview.setAdapter(myadapter);
     }

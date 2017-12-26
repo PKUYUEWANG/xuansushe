@@ -21,5 +21,9 @@
         </intent-filter>
     </activity>
         <activity android:name=".SelectRoom" />
+        <activity android:name=".SelectPerson" />
+        <activity android:name=".MultiPeople" />
+        <activity android:name=".Successful" />
+        <activity android:name=".BacktoSuccessActivity"></activity>
     </application>
 </manifest>

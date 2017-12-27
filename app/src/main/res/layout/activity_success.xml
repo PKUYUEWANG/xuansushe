@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#F5DEB3"
     tools:context=".Successful">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -100,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dip"
                 android:background="#123"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="1dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -115,22 +115,22 @@
                 android:layout_marginTop="25dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp">
+                android:layout_height="40dp"
+                android:layout_marginTop="0dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="状态"
                     android:textColor="#000000"
                     android:typeface="sans"
-                    android:textSize="25sp"/>
+                    android:textSize="30sp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="已完成办理"
                     android:textColor="#000000"
                     android:typeface="sans"
-                    android:textSize="25sp"
+                    android:textSize="30sp"
                     android:layout_marginLeft="230dp"/>
             </LinearLayout>
             <View
@@ -148,7 +148,7 @@
                     android:text="楼号"
                     android:textColor="#000000"
                     android:typeface="sans"
-                    android:textSize="25sp"/>
+                    android:textSize="30sp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -190,15 +190,32 @@
                 android:layout_height="1dip"
                 android:background="#123"
                 android:layout_marginTop="5dp"/>
-            <LinearLayout
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp">
-                <ImageView
-                    android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/map"/>
-            </LinearLayout>
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="扫描寻找小伙伴!"
+                    android:textColor="#000000"
+                    android:textSize="30dp" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="263dp"
+                    android:layout_height="284dp"
+                    android:src="@drawable/mmm"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/textView" />
+            </RelativeLayout>
 
 
         </LinearLayout>

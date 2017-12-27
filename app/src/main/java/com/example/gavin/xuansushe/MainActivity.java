@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -49,6 +50,7 @@ import cn.edu.pku.gavin.util.NetUtil;
 public class MainActivity extends AppCompatActivity {
 
     Button login_btn;//定义
+    Button login_call;
     EditText my_stuid,my_password;
     String password;
     String stuid;
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         login_btn= (Button) findViewById(R.id.button);//从控件中寻找信息
         my_stuid= (EditText) findViewById(R.id.editText3);//获得学号
         my_password= (EditText) findViewById(R.id.editText);//密码
+        login_call=(Button) findViewById(R.id.button2);
 
 
 //        login_btn.setOnTouchListener(new View.OnTouchListener() {
@@ -93,6 +96,14 @@ public class MainActivity extends AppCompatActivity {
 //                return false;
 //            }
 //        });
+        login_call.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:010-61273672"));
+                startActivity(intent);
+
+            }});
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {//编辑事件

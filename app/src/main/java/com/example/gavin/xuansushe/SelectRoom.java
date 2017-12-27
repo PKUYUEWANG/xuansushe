@@ -2,6 +2,7 @@ package com.example.gavin.xuansushe;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class SelectRoom extends AppCompatActivity {
     ListView myinfolistview;
     Button btn_deal;
     User student=new User();
-
+    Button btn_boos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class SelectRoom extends AppCompatActivity {
         student= (User) getIntent().getSerializableExtra("student");
         myinfolistview= (ListView) findViewById(R.id.mylist);
         btn_deal= (Button) findViewById(R.id.deal_with_mybus);
+        btn_boos=(Button) findViewById(R.id.deal_with_mybOOs);
 //        btn_deal.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {
@@ -55,6 +57,15 @@ public class SelectRoom extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_boos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.ss.pku.edu.cn/index.php/overview/map"));
+                startActivity(intent);
+            }
+        });
+
         initlistview();//初始化Myinfo
     }
 

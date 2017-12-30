@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }).start();
                 }else{
-                    Toast.makeText(MainActivity.this, "账户信息错误", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "信息错误,请重新填写", Toast.LENGTH_SHORT).show();
                 }
             }
         });
